@@ -1,0 +1,31 @@
+name: CI
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Set Node version 📦
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          check-latest: true
+
+      - name: Install 🏗
+        run: |
+          yarn
+
+      - name: Test 🧪
+        run: |
+          yarn workspace web test
+
+      - name: Build 🔧
+        run: |
+          yarn workspace web build

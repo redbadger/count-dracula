@@ -26,10 +26,6 @@ jobs:
         run: |
           yarn
 
-      - name: Start
-        run: |
-          yarn workspace web start wait-on
-
       - name: Pa11y
         run: |
           yarn workspace web test:accessibility

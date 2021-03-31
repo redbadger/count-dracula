@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Footer from './footer';
-import Header from './header';
+import Footer from '../footer';
+import Header from '../header';
 
 const StyledPage = styled.div`
   min-height: 100vh;

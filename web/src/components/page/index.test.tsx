@@ -4,9 +4,9 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import { store } from '../../app/store';
-import Header from './index';
+import Page from './index';
 
-describe('Header', () => {
+describe('Page component', () => {
   test('renders', async () => {
     const ProviderWrapper: React.FC = ({ children }) => (
       <Provider store={store}>{children}</Provider>
@@ -14,10 +14,10 @@ describe('Header', () => {
 
     render(
       <ProviderWrapper>
-        <Header />
+        <Page />
       </ProviderWrapper>,
     );
 
-    expect(screen.getByRole('banner')).toBeInTheDocument();
+    expect(screen.getByRole('main')).toBeInTheDocument();
   });
 });

@@ -1,7 +1,9 @@
 {
   "author": "Pedro Martin <pedro.martin@red-badger.com>",
   "dependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "puppeteer": "^8.0.0",
+    "puppeteer-core": "^8.0.0"
   },
   "description": "Mock web app to test to test https://github.com/redbadger/continous-compliance/",
   "husky": {

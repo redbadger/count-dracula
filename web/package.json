@@ -52,8 +52,8 @@
     "test": "react-scripts test",
     "test:ci": "CI=true yarn test",
     "test:ci-report": "CI=true yarn test --coverage --json --outputFile=./test-results/unit-tests/results.json",
-    "test:accessibility": "react-scripts start && pa11y-ci --config .pa11yci.json",
-    "wait-on": "wait-on http-get://localhost:3000"
+    "wait-on": "wait-on http-get://localhost:3000",
+    "test:accessibility": "wait-on http-get://localhost:3000 && pa11yci --config .pa11yci.json"
   },
   "version": "0.1.0",
   "devDependencies": {

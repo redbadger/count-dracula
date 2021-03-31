@@ -28,7 +28,7 @@ jobs:
 
       - name: Start
         run: |
-          yarn workspace web start
+          yarn workspace web start wait-on
 
       - name: Pa11y
         run: |

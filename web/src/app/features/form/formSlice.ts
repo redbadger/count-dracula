@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
 
-interface FormState {
+export interface FormState {
   values: {
     healthy: boolean;
     weight: boolean;

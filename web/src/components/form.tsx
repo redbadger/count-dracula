@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 import {
   selectForm,
+  setIsNotReadyToSubmit,
   setIsReadyToSubmit,
   setValues,
 } from '../app/features/form/formSlice';
@@ -31,19 +32,21 @@ const FormComponent: React.FC = () => {
       (value) => value === true,
     );
 
-    if (areAllCheckboxesChecked) {
-      dispatch(setIsReadyToSubmit());
-    }
+    areAllCheckboxesChecked
+      ? dispatch(setIsReadyToSubmit())
+      : dispatch(setIsNotReadyToSubmit());
   }, [dispatch, values]);
 
   return (
     <Form onSubmit={handleSubmit}>
       <Checkboxes onChange={handleChange}>
-        <Checkboxes.Box value="healthy">Are fit and healthy</Checkboxes.Box>
-        <Checkboxes.Box value="weight">
+        <Checkboxes.Box value="healthy" checked={values.healthy}>
+          Are fit and healthy
+        </Checkboxes.Box>
+        <Checkboxes.Box value="weight" checked={values.weight}>
           Weigh between 7 stone 12 lbs and 25 stone, or 50kg and 158kg
         </Checkboxes.Box>
-        <Checkboxes.Box value="age">
+        <Checkboxes.Box value="age" checked={values.age}>
           Are aged between 17 and 66 (or 70 if you have given blood before)
         </Checkboxes.Box>
       </Checkboxes>

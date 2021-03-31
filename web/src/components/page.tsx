@@ -19,7 +19,7 @@ const Page: React.FC = ({ children }) => {
   return (
     <StyledPage>
       <Header />
-      <main role="main" className="nhsuk-width-container app-width-container">
+      <main role="main" className="nhsuk-main-wrapper ">
         {children}
       </main>
       <Footer />

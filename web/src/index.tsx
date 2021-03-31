@@ -1,6 +1,6 @@
 import React from 'react';
 import 'normalize.css';
-import 'nhsuk-frontend/packages/core/all.scss';
+import './styles/index.scss';
 
 import { hydrate, render } from 'react-dom';
 import { store } from './app/store';

@@ -31,13 +31,20 @@ export const formSlice = createSlice({
     setIsReadyToSubmit: (state) => {
       state.isReadyToSubmit = true;
     },
+    setIsNotReadyToSubmit: (state) => {
+      state.isReadyToSubmit = false;
+    },
     setHasError: (state) => {
       state.hasError = true;
     },
   },
 });
 
-export const { setValues, setIsReadyToSubmit } = formSlice.actions;
+export const {
+  setIsNotReadyToSubmit,
+  setIsReadyToSubmit,
+  setValues,
+} = formSlice.actions;
 
 export const selectForm = (state: RootState) => state.form;
 

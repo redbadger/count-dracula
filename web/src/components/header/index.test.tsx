@@ -1,22 +1,23 @@
 import { Provider } from 'react-redux';
-import { render } from '@testing-library/react';
+// @ts-ignore
+import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 
 import { store } from '../../app/store';
-import Home from './index';
+import Header from './index';
 
-describe('Home', () => {
-  test('renders', () => {
+describe('Header', () => {
+  test('renders', async () => {
     const ProviderWrapper: React.FC = ({ children }) => (
       <Provider store={store}>{children}</Provider>
     );
 
-    const { getByText } = render(
+    render(
       <ProviderWrapper>
-        <Home />
+        <Header />
       </ProviderWrapper>,
     );
 
-    expect(getByText(/Blood donation/i)).toBeInTheDocument();
+    expect(screen.getByRole('banner')).toBeInTheDocument();
   });
 });

@@ -1,12 +1,12 @@
-import React from 'react';
 import 'normalize.css';
-import 'nhsuk-frontend/packages/core/all.scss';
-
 import { hydrate, render } from 'react-dom';
-import { store } from './app/store';
 import { Provider } from 'react-redux';
+import React from 'react';
+
+import { store } from './app/store';
 import * as serviceWorker from './serviceWorker';
 import Routes from './routes';
+import './styles/index.scss';
 
 const rootElement = document.getElementById('root');
 

@@ -28,6 +28,7 @@ jobs:
 
       - name: Pa11y
         run: |
+          yarn add pa11y -W
           pa11y http://localhost:3000
 
       - name: Test 🧪

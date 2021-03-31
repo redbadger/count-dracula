@@ -1,11 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ErrorPage from './index';
+import Thanks from './index';
 
-describe('404', () => {
+describe('Thanks page', () => {
   test('renders', () => {
-    const { getByText } = render(<ErrorPage />);
-
-    expect(getByText(/404/i)).toBeInTheDocument();
+    const { getByText } = render(<Thanks />);
+    expect(getByText(/Thanks/i)).toBeInTheDocument();
   });
 });

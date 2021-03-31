@@ -28,7 +28,7 @@ jobs:
 
       - name: Pa11y
         run: |
-          yarn test:accessibility
+          yarn workspace web test:accessibility
 
       - name: Test 🧪
         run: |

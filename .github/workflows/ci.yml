@@ -23,11 +23,11 @@ jobs:
         run: |
           yarn
 
-      -name: Start
+      - name: Start
         run: |
           yarn workspace web start
 
-      -name: Pa11y
+      - name: Pa11y
         run: |
           yarn workspace web test:accessibility
 

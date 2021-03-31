@@ -1,6 +1,7 @@
 import { Button, Checkboxes, Form } from 'nhsuk-react-components';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { SyntheticEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import {
   selectForm,
@@ -11,11 +12,18 @@ import { useEffect } from 'react';
 
 const FormComponent: React.FC = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const { values, isReadyToSubmit } = useSelector(selectForm);
 
   const handleChange = (event: SyntheticEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;
     dispatch(setValues({ ...values, [target.value]: target.checked }));
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    history.push('/thanks');
   };
 
   useEffect(() => {
@@ -26,14 +34,14 @@ const FormComponent: React.FC = () => {
     if (areAllCheckboxesChecked) {
       dispatch(setIsReadyToSubmit());
     }
-  });
+  }, [dispatch, values]);
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Checkboxes onChange={handleChange}>
         <Checkboxes.Box value="healthy">Are fit and healthy</Checkboxes.Box>
         <Checkboxes.Box value="weight">
-          Weight between 7 stone 12 lbs and 25 stone, or 50kg and 158kg
+          Weigh between 7 stone 12 lbs and 25 stone, or 50kg and 158kg
         </Checkboxes.Box>
         <Checkboxes.Box value="age">
           Are aged between 17 and 66 (or 70 if you have given blood before)

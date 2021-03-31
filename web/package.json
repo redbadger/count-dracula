@@ -55,6 +55,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7",
-    "@types/styled-components": "^5.1.9"
+    "@types/styled-components": "^5.1.9",
+    "react-snap": "^1.23.0"
   }
 }

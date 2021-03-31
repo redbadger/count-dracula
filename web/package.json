@@ -53,7 +53,7 @@
     "test:ci": "CI=true yarn test",
     "test:ci-report": "CI=true yarn test --coverage --json --outputFile=./test-results/unit-tests/results.json",
     "wait-on": "wait-on http-get://localhost:3000",
-    "test:accessibility": "wait-on http-get://localhost:3000 && pa11yci --config .pa11yci.json"
+    "test:accessibility": "yarn workspace web start && wait-on http-get://localhost:3000 && pa11yci --config .pa11yci.json"
   },
   "version": "0.1.0",
   "devDependencies": {

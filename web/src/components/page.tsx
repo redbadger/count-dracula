@@ -11,6 +11,7 @@ const StyledPage = styled.div`
 
   main {
     flex: 1 auto;
+    width: 100%;
   }
 `;
 
@@ -18,7 +19,9 @@ const Page: React.FC = ({ children }) => {
   return (
     <StyledPage>
       <Header />
-      <main role="main">{children}</main>
+      <main role="main" className="nhsuk-width-container app-width-container">
+        {children}
+      </main>
       <Footer />
     </StyledPage>
   );

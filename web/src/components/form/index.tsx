@@ -8,7 +8,7 @@ import {
   setIsNotReadyToSubmit,
   setIsReadyToSubmit,
   setValues,
-} from '../app/features/form/formSlice';
+} from '../../app/features/form/formSlice';
 import { useEffect } from 'react';
 
 const FormComponent: React.FC = () => {

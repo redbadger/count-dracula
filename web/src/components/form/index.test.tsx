@@ -3,9 +3,9 @@ import { render } from '@testing-library/react';
 import React from 'react';
 
 import { store } from '../../app/store';
-import Home from './index';
+import Form from './index';
 
-describe('Home', () => {
+describe('Form', () => {
   test('renders', () => {
     const ProviderWrapper: React.FC = ({ children }) => (
       <Provider store={store}>{children}</Provider>
@@ -13,10 +13,10 @@ describe('Home', () => {
 
     const { getByText } = render(
       <ProviderWrapper>
-        <Home />
+        <Form />
       </ProviderWrapper>,
     );
 
-    expect(getByText(/Blood donation/i)).toBeInTheDocument();
+    expect(getByText(/healthy/i)).toBeInTheDocument();
   });
 });

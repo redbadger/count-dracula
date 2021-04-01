@@ -1,0 +1,10 @@
+{
+  "total": 3,
+  "passes": 3,
+  "errors": 0,
+  "results": {
+    "http://localhost:3000/thanks": [],
+    "http://localhost:3000": [],
+    "http://localhost:3000/pedro-dimple": []
+  }
+}

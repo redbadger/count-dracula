@@ -47,7 +47,8 @@
     "eject": "react-scripts eject",
     "postbuild": "react-snap",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "test:ci": "CI=true yarn test --coverage"
   },
   "version": "0.1.0",
   "devDependencies": {

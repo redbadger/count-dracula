@@ -1,4 +1,6 @@
 import { Provider } from 'react-redux';
+// Set TS ignore here due a known bug on TS types for @testing-library/react
+// https: github.com/testing-library/react-testing-library/issues/610#issuecomment-598514192
 // @ts-ignore
 import { render, fireEvent, screen } from '@testing-library/react';
 import React from 'react';

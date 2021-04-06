@@ -49,12 +49,12 @@
     "eject": "react-scripts eject",
     "postbuild": "react-snap",
     "start": "react-scripts start",
-    "test": "react-scripts test",
-    "test:ci": "CI=true yarn test",
+    "test:a11y": "sh ./scripts/a11y.sh",
     "test:ci-report": "CI=true yarn test --coverage --json --outputFile=./test-results/unit-tests/results.json",
-    "wait-on": "wait-on http-get://localhost:3000",
+    "test:ci": "CI=true yarn test",
     "test:e2e": "ts-node --project ./e2e/tsconfig.json ./e2e/example.ts",
-    "test:a11y": "sh ./scripts/a11y.sh"
+    "test": "react-scripts test",
+    "wait-on": "wait-on http-get://localhost:3000"
   },
   "version": "0.1.0",
   "devDependencies": {

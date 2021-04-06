@@ -48,7 +48,8 @@
     "postbuild": "react-snap",
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "test:ci": "CI=true yarn test --coverage"
+    "test:ci": "CI=true yarn test",
+    "test:ci-report": "CI=true yarn test --coverage --json --outputFile=./test-results/unit-tests/results.json"
   },
   "version": "0.1.0",
   "devDependencies": {

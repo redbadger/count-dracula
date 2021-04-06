@@ -49,7 +49,7 @@
     "eject": "react-scripts eject",
     "postbuild": "react-snap",
     "start": "react-scripts start",
-    "test:a11y": "sh ./scripts/a11y.sh",
+    "test:accessibility": "sh ./scripts/a11y.sh",
     "test:ci-report": "CI=true yarn test --coverage --json --outputFile=./test-results/unit-tests/results.json",
     "test:ci": "CI=true yarn test",
     "test:e2e": "ts-node --project ./e2e/tsconfig.json ./e2e/example.ts",

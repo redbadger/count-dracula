@@ -6,7 +6,7 @@ const checkboxValidation = async () => {
   await page.goto('http://localhost:3000');
   await page.screenshot({ path: './e2e/homepage.png' });
 
-// to test validation on checkboxes
+// tests validation on checkboxes
 
   const checkbox1 = (await page.$(".nhsuk-checkboxes__input:first-child"))!;
   await checkbox1.click();
@@ -24,16 +24,8 @@ const checkboxValidation = async () => {
   const isEnabled = enabledButton !== null;
   await page.screenshot({ path: './e2e/e2e-screenshots/checkbox3.png' });
 
+  // add test that you submit and move to thanks page, take screenshot, then press back button
 
   await browser.close();
 };
 
-const start = async () => {
-  try {
-    await takeScreenshot();
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-start();

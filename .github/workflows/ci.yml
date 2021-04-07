@@ -34,7 +34,7 @@ jobs:
         run: |
           yarn workspace web test
 
-      - name: E2e tests 🧪
+      - name: e2e tests
         run: |
           yarn workspace web test:e2e
 

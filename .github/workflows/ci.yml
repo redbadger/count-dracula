@@ -26,11 +26,11 @@ jobs:
         run: |
           yarn
 
-      - name: Pa11y
+      - name: Accessibility tests
         run: |
           yarn workspace web test:accessibility
 
-      - name: Test 🧪
+      - name: Unit tests 🧪
         run: |
           yarn workspace web test
 

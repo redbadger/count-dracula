@@ -8,16 +8,13 @@
   },
   "urls": [
     {
-      "url": "http://localhost:3000",
-      "screenCapture": "./e2e/a11y-screenshots/home.png"
+      "url": "http://localhost:3000"
     },
     {
-      "url": "http://localhost:3000/thanks",
-      "screenCapture": "./e2e/a11y-screenshots/thanks.png"
+      "url": "http://localhost:3000/thanks"
     },
     {
-      "url": "http://localhost:3000/pedro-dimple",
-      "screenCapture": "./e2e/a11y-screenshots/404.png"
+      "url": "http://localhost:3000/pedro-dimple"
     }
   ]
 }

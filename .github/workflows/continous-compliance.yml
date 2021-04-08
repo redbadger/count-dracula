@@ -6,9 +6,28 @@ on:
 jobs:
   continous-compliance:
     runs-on: ubuntu-latest
-    name: a job that gather compliance evidence and store it in the cloud
+    name: Continous compliance 🔍
     steps:
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Set Node version 📦
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          check-latest: true
+
+      - name: Install 🏗
+        run: |
+          yarn
+
+      - name: Gather test results 🗃 🧪
+        run: |
+          yarn workspace web test:ci-report
+
       - name: Continous compliance
-        uses: redbadger/continous-compliance@v0.1
+        uses: redbadger/continous-compliance@v0.2
+        with:
+          tests-folder: 'web/test-results'

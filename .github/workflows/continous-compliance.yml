@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - test-continous-compliance
+      - test-continous-compliance-v03
 jobs:
   continous-compliance:
     runs-on: ubuntu-latest
@@ -28,6 +29,6 @@ jobs:
           yarn workspace web test:ci-report
 
       - name: Continous compliance
-        uses: redbadger/continous-compliance@v0.2
+        uses: redbadger/continous-compliance@v0.3
         with:
           tests-folder: 'web/test-results'

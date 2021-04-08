@@ -29,3 +29,5 @@ jobs:
 
       - name: Continous compliance
         uses: redbadger/continous-compliance@v0.2
+        with:
+          tests-folder: 'web/test-results'

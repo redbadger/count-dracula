@@ -51,8 +51,8 @@
     "test:accessibility": "sh ./scripts/a11y.sh",
     "test:ci-report": "CI=true yarn test --coverage --json --outputFile=./test-results/unit-tests/results.json",
     "test:ci": "CI=true yarn test",
-    "test:e2e": "ts-node --project ./e2e/tsconfig.json ./e2e/index.ts",
-    "test:e2e-jest": "yarn jest --config ./e2e/jest.config.js e2e",
+    "test:e2e": "ts-node --project ./e2e/tsconfig.json ./e2e/test.ts",
+    "test:e2e-jest": "yarn jest --config ./e2e/jest.config.js ./e2e/test.ts",
     "test": "react-scripts test",
     "wait-on": "wait-on http-get://localhost:3000"
   },

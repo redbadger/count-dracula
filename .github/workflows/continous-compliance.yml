@@ -29,6 +29,6 @@ jobs:
           yarn workspace web test:ci-report
 
       - name: Continous compliance
-        uses: redbadger/continous-compliance@v0.3
+        uses: redbadger/continous-compliance@v0.4
         with:
           tests-folder: 'web/test-results'

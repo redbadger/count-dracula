@@ -14,13 +14,13 @@ const selector = {
 };
 
 const path = {
-  homepage: './e2e/e2e-screenshots/homepage.png',
-  checkbox1: './e2e/e2e-screenshots/checkbox1.png',
-  checkbox2: './e2e/e2e-screenshots/checkbox2.png',
-  checkbox3: './e2e/e2e-screenshots/checkbox3.png',
-  formPage: './e2e/e2e-screenshots/formPage.png',
-  returnToForm: './e2e/e2e-screenshots/returnToForm.png',
-  thanks: './e2e/e2e-screenshots/thanks.png',
+  homepage: './test-results/e2e-screenshots/homepage.png',
+  checkbox1: './test-results/e2e-screenshots/checkbox1.png',
+  checkbox2: './test-results/e2e-screenshots/checkbox2.png',
+  checkbox3: './test-results/e2e-screenshots/checkbox3.png',
+  formPage: './test-results/e2e-screenshots/formPage.png',
+  returnToForm: './test-results/e2e-screenshots/returnToForm.png',
+  thanks: './test-results/e2e-screenshots/thanks.png',
 };
 
 describe('End to end tests', () => {

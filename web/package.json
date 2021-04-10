@@ -28,7 +28,6 @@
     "pa11y": "^5.3.0",
     "pa11y-ci": "^2.4.0",
     "puppeteer": "^8.0.0",
-    "puppeteer-core": "^8.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.0",
@@ -52,15 +51,19 @@
     "test:accessibility": "sh ./scripts/a11y.sh",
     "test:ci-report": "CI=true yarn test --coverage --json --outputFile=./test-results/unit-tests/results.json",
     "test:ci": "CI=true yarn test",
-    "test:e2e": "ts-node --project ./e2e/tsconfig.json ./e2e/example.ts",
+    "test:e2e": "sh ./scripts/e2e.sh",
+    "test:e2e-jest": "yarn jest --config ./e2e/jest.config.js ./e2e/test.ts --json --outputFile=./test-results/e2e-tests/results.json",
     "test": "react-scripts test",
     "wait-on": "wait-on http-get://localhost:3000"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@types/puppeteer": "^5.4.3",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.9",
     "pa11y-ci-reporter-html": "^2.1.3",
-    "react-snap": "^1.23.0"
+    "react-snap": "^1.23.0",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1"
   }
 }

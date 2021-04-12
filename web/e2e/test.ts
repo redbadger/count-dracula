@@ -14,7 +14,7 @@ const selector = {
 };
 
 const path = {
-  homepage: './test-results/e2e-screenshots/homepage.png',
+  zoomHomepage: './test-results/e2e-screenshots/zoomHomepage.png',
   checkbox1: './test-results/e2e-screenshots/checkbox1.png',
   checkbox2: './test-results/e2e-screenshots/checkbox2.png',
   checkbox3: './test-results/e2e-screenshots/checkbox3.png',
@@ -28,7 +28,6 @@ describe('End to end tests', () => {
     browser = await puppeteer.launch();
     page = await browser.newPage();
     await page.goto('http://localhost:3000');
-
   });
 
   it('tests the form title can be zoomed up to 200%', async () => {
@@ -39,7 +38,7 @@ describe('End to end tests', () => {
     const h1InnerText = await page.$eval(selector.h1, (element) => {
       return element.innerHTML;
     });
-    await page.screenshot({ path: path.homepage });
+    await page.screenshot({ path: path.zoomHomepage });
     expect(h1InnerText).toBe('Blood donation');
   });
 

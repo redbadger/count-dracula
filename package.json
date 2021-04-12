@@ -17,6 +17,9 @@
     "*.{ts,tsx}": [
       "eslint --fix",
       "prettier --write"
+    ],
+    "*.{tf}": [
+      "terrafrom fmt --check"
     ]
   },
   "name": "count-dracula",

@@ -28,9 +28,14 @@ describe('End to end tests', () => {
     browser = await puppeteer.launch();
     page = await browser.newPage();
     await page.goto('http://localhost:3000');
+
   });
 
-  it('loads the form page title', async () => {
+  it('tests the form title can be zoomed up to 200%', async () => {
+    const session = await page.target().createCDPSession();
+    await session.send('Emulation.setPageScaleFactor', {
+      pageScaleFactor: 2, // 200% zoom
+    });
     const h1InnerText = await page.$eval(selector.h1, (element) => {
       return element.innerHTML;
     });
@@ -39,6 +44,10 @@ describe('End to end tests', () => {
   });
 
   it('loads the form checkboxes unticked', async () => {
+    const session = await page.target().createCDPSession();
+    await session.send('Emulation.setPageScaleFactor', {
+        pageScaleFactor: 1, //back to 100% zoom
+    });
     const checkboxes = await page.$$(selector.allCheckboxes);
     const checkboxesChecked = await Promise.all(
       checkboxes.map(

@@ -30,6 +30,7 @@ describe('Tests homepage on different devices', () => {
     });
     await page.screenshot({ path: path.iPadProLandscapeHomepage });
     expect(h1InnerText).toBe('Blood donation');
+    await browser.close();
   });
 
   it('tests the form title on iPhone X', async () => {
@@ -43,23 +44,21 @@ describe('Tests homepage on different devices', () => {
     });
     await page.screenshot({ path: path.iPhoneXHomepage });
     expect(h1InnerText).toBe('Blood donation');
+    await browser.close();
+  });
+
+  it('tests the form title on Galaxy S5', async () => {
+    browser = await puppeteer.launch();
+    page = await browser.newPage();
+    await page.emulate(galaxyS5);
+    await page.goto('http://localhost:3000');
+
+    const h1InnerText = await page.$eval(selector.h1, (element) => {
+      return element.innerHTML;
     });
-
-    it('tests the form title on Galaxy S5', async () => {
-        browser = await puppeteer.launch();
-        page = await browser.newPage();
-        await page.emulate(galaxyS5);
-        await page.goto('http://localhost:3000');
-
-      const h1InnerText = await page.$eval(selector.h1, (element) => {
-        return element.innerHTML;
-      });
-      await page.screenshot({ path: path.galaxyS5Homepage });
-      expect(h1InnerText).toBe('Blood donation');
-      });
-
-  afterAll(async () => {
-    browser.close();
+    await page.screenshot({ path: path.galaxyS5Homepage });
+    expect(h1InnerText).toBe('Blood donation');
+    await browser.close();
   });
 });
 

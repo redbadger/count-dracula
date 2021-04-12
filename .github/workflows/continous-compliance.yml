@@ -32,3 +32,5 @@ jobs:
         uses: redbadger/continous-compliance@v0.4
         with:
           tests-folder: 'web/test-results'
+          gcp-project-id: 'count-dracula-production'
+          gcp-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}

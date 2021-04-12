@@ -10,25 +10,25 @@ const selector = {
 
 const path = {
   iPhoneXHomepage: './test-results/e2e-screenshots/iPhoneXHomepage.png',
-  iPadHomepage: './test-results/e2e-screenshots/iPadHomepage.png',
+  iPadProLandscapeHomepage: './test-results/e2e-screenshots/iPadProLandscapeHomepage.png',
   galaxyS5Homepage: './test-results/e2e-screenshots/galaxyS5Homepage.png',
 };
 
-const iPad = devices['iPad'];
+const iPadProLandscape = devices['iPad Pro landscape'];
 const iPhoneX = devices['iPhone X'];
 const galaxyS5 = devices ['Galaxy S5'];
 
-describe('Tests on different devices', () => {
-  it('tests the form title on iPad', async () => {
+describe('Tests homepage on different devices', () => {
+  it('tests the form title on iPad Pro landscape', async () => {
       browser = await puppeteer.launch();
       page = await browser.newPage();
-      await page.emulate(iPad);
+      await page.emulate(iPadProLandscape);
       await page.goto('http://localhost:3000');
 
     const h1InnerText = await page.$eval(selector.h1, (element) => {
       return element.innerHTML;
     });
-    await page.screenshot({ path: path.iPadHomepage });
+    await page.screenshot({ path: path.iPadProLandscapeHomepage });
     expect(h1InnerText).toBe('Blood donation');
   });
 

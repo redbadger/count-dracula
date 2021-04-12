@@ -27,6 +27,8 @@ jobs:
       - name: Gather test results 🗃 🧪
         run: |
           yarn workspace web test:ci-report
+          yarn workspace web test:accessibility
+          yarn workspace web test:e2e
 
       - name: Continous compliance
         uses: redbadger/continous-compliance@v0.4

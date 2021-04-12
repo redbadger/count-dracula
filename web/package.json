@@ -52,7 +52,6 @@
     "test:ci-report": "CI=true yarn test --coverage --json --outputFile=./test-results/unit-tests/results.json",
     "test:ci": "CI=true yarn test",
     "test:e2e": "sh ./scripts/e2e.sh",
-    "test:e2e-jest": "yarn jest --config ./e2e/jest.config.js ./e2e/test.ts --json --outputFile=./test-results/e2e-tests/results.json",
     "test": "react-scripts test",
     "wait-on": "wait-on http-get://localhost:3000"
   },

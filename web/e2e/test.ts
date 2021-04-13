@@ -14,7 +14,7 @@ const selector = {
 };
 
 const path = {
-  homepage: './test-results/e2e-screenshots/homepage.png',
+  zoomHomepage: './test-results/e2e-screenshots/zoomHomepage.png',
   checkbox1: './test-results/e2e-screenshots/checkbox1.png',
   checkbox2: './test-results/e2e-screenshots/checkbox2.png',
   checkbox3: './test-results/e2e-screenshots/checkbox3.png',
@@ -30,15 +30,23 @@ describe('End to end tests', () => {
     await page.goto('http://localhost:3000');
   });
 
-  it('loads the form page title', async () => {
+  it('tests the form title can be zoomed up to 200%', async () => {
+    const session = await page.target().createCDPSession();
+    await session.send('Emulation.setPageScaleFactor', {
+      pageScaleFactor: 2, // 200% zoom
+    });
     const h1InnerText = await page.$eval(selector.h1, (element) => {
       return element.innerHTML;
     });
-    await page.screenshot({ path: path.homepage });
+    await page.screenshot({ path: path.zoomHomepage });
     expect(h1InnerText).toBe('Blood donation');
   });
 
   it('loads the form checkboxes unticked', async () => {
+    const session = await page.target().createCDPSession();
+    await session.send('Emulation.setPageScaleFactor', {
+        pageScaleFactor: 1, //back to 100% zoom
+    });
     const checkboxes = await page.$$(selector.allCheckboxes);
     const checkboxesChecked = await Promise.all(
       checkboxes.map(

@@ -37,3 +37,4 @@ jobs:
           gcp-bucket-name: count-dracula-continous-compliance-prod
           gcp-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           docs-folder: web/docs
+          github-token: ${{ secrets.GITHUB_TOKEN }}

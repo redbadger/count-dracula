@@ -24,11 +24,10 @@ describe('Tests homepage on different devices', () => {
       page = await browser.newPage();
       await page.emulate(iPadProLandscape);
       await page.goto('http://localhost:3000');
-
     const h1InnerText = await page.$eval(selector.h1, (element) => {
       return element.innerHTML;
     });
-    await page.screenshot({ path: path.iPadProLandscapeHomepage });
+    await page.screenshot({ path: path.iPadProLandscapeHomepage, fullPage: true });
     expect(h1InnerText).toBe('Blood donation');
     await browser.close();
   });
@@ -42,7 +41,7 @@ describe('Tests homepage on different devices', () => {
     const h1InnerText = await page.$eval(selector.h1, (element) => {
       return element.innerHTML;
     });
-    await page.screenshot({ path: path.iPhoneXHomepage });
+    await page.screenshot({ path: path.iPhoneXHomepage, fullPage: true  });
     expect(h1InnerText).toBe('Blood donation');
     await browser.close();
   });
@@ -56,9 +55,8 @@ describe('Tests homepage on different devices', () => {
     const h1InnerText = await page.$eval(selector.h1, (element) => {
       return element.innerHTML;
     });
-    await page.screenshot({ path: path.galaxyS5Homepage });
+    await page.screenshot({ path: path.galaxyS5Homepage, fullPage: true  });
     expect(h1InnerText).toBe('Blood donation');
     await browser.close();
   });
 });
-

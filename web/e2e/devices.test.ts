@@ -20,10 +20,11 @@ const galaxyS5 = devices ['Galaxy S5'];
 
 describe('Tests homepage on different devices', () => {
   it('tests the form title on iPad Pro landscape', async () => {
-      browser = await puppeteer.launch();
-      page = await browser.newPage();
-      await page.emulate(iPadProLandscape);
-      await page.goto('http://localhost:3000');
+    browser = await puppeteer.launch();
+    page = await browser.newPage();
+    await page.emulate(iPadProLandscape);
+    await page.goto('http://localhost:3000');
+
     const h1InnerText = await page.$eval(selector.h1, (element) => {
       return element.innerHTML;
     });
@@ -33,10 +34,10 @@ describe('Tests homepage on different devices', () => {
   });
 
   it('tests the form title on iPhone X', async () => {
-      browser = await puppeteer.launch();
-      page = await browser.newPage();
-      await page.emulate(iPhoneX);
-      await page.goto('http://localhost:3000');
+    browser = await puppeteer.launch();
+    page = await browser.newPage();
+    await page.emulate(iPhoneX);
+    await page.goto('http://localhost:3000');
 
     const h1InnerText = await page.$eval(selector.h1, (element) => {
       return element.innerHTML;

@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - hello-love
   pull_request:
     branches:
       - '*'

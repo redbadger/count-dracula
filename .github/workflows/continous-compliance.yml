@@ -2,8 +2,10 @@ name: Continous compliance 🔍
 on:
   push:
     branches:
-      - test-continous-compliance
-      - test-continous-compliance-v03
+      - main
+  pull_request:
+    branches:
+      - '*'
 jobs:
   continous-compliance:
     runs-on: ubuntu-latest
@@ -30,9 +32,11 @@ jobs:
           yarn workspace web test:accessibility
           yarn workspace web test:e2e
 
-      - name: Continous compliance
-        uses: redbadger/continous-compliance@v0.4
+      - name: Continous compliance 🔍
+        uses: redbadger/continous-compliance@v0.7
         with:
-          tests-folder: 'web/test-results'
-          gcp-project-id: 'count-dracula-production'
+          docs-folder: web/docs
           gcp-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          gcp-bucket-name: count-dracula-continous-compliance-prod
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          tests-folder: web/test-results

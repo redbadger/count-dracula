@@ -4,9 +4,9 @@ on:
     branches:
       - main
       - test-continous-compliance-v08
-  pull_request:
-    branches:
-      - '*'
+  # pull_request:
+  #   branches:
+  #     - '*'
 jobs:
   continous-compliance:
     runs-on: ubuntu-latest

@@ -32,7 +32,7 @@ jobs:
           yarn workspace web test:ci-report
 
       - name: Continous compliance 🔍
-        uses: redbadger/continous-compliance@v0.8
+        uses: redbadger/continous-compliance@v0.9
         with:
           docs-folder: web/docs
           gcp-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}

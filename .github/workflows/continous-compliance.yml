@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - test-continous-compliance-v08
+      - test-continous-compliance-v09
   # pull_request:
   #   branches:
   #     - '*'

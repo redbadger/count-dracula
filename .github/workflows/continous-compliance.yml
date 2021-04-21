@@ -2,9 +2,6 @@ name: Continous compliance 🔍
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
       - '*'
 jobs:
   continous-compliance:
@@ -33,7 +30,7 @@ jobs:
           yarn workspace web test:e2e
 
       - name: Continous compliance 🔍
-        uses: redbadger/continous-compliance@v0.7
+        uses: redbadger/continous-compliance@v0.9
         with:
           docs-folder: web/docs
           gcp-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
